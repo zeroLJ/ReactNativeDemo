@@ -1,4 +1,4 @@
-package com.awesomeproject;
+package com.awesomeproject.module;
 
 import android.widget.Toast;
 

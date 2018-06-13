@@ -7,6 +7,7 @@ import TabBarItem from "./TabBarItem";
 import ToScreen from "./ToScreen";
 import Test3 from "../Test3";
 import AnimatedScreen from "../animated/AnimatedScreen";
+import TextViewScreen from "../view/ViewScreen";
 export default class MainScreen extends Component{
     render(){
         return(
@@ -52,7 +53,7 @@ const Tab = TabNavigator(
         },
 
         Test3:{
-            screen:Test3,
+            screen:TextViewScreen,
             navigationOptions:({navigation}) => ({
                 tabBarLabel:'我',
                 tabBarIcon:({focused,tintColor}) => (
