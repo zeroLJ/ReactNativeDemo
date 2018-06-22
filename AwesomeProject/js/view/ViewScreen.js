@@ -24,7 +24,7 @@ export default class ViewScreen extends Component{
                   >
                 </TextView>
                 <BEditText
-                    style={{ height: 100,fontWeight:1}}
+                    style={{ height: 100,width:300}}
                     text="原生EditText"
                     onFocusChanged={()=>{
                         ToastExample.show("focus",ToastExample.SHORT,

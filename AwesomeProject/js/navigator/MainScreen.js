@@ -8,6 +8,7 @@ import ToScreen from "./ToScreen";
 import Test3 from "../Test3";
 import AnimatedScreen from "../animated/AnimatedScreen";
 import TextViewScreen from "../view/ViewScreen";
+import PostScreen from "../http/PostScreen";
 export default class MainScreen extends Component{
     render(){
         return(
@@ -21,7 +22,7 @@ export default class MainScreen extends Component{
  * Tab控件
  */
 const Tab = TabNavigator(
-    {
+    {//页面配置
         Home:{
             screen:ScreenA,
             navigationOptions:({navigation}) => ({
@@ -52,7 +53,7 @@ const Tab = TabNavigator(
             }),
         },
 
-        Test3:{
+        tab3:{
             screen:TextViewScreen,
             navigationOptions:({navigation}) => ({
                 tabBarLabel:'我',
@@ -66,9 +67,23 @@ const Tab = TabNavigator(
                 )
             }),
         },
+        tab4:{
+            screen:PostScreen,
+            navigationOptions:({navigation}) => ({
+                tabBarLabel:'post',
+                tabBarIcon:({focused,tintColor}) => (
+                    <TabBarItem
+                        tintColor={tintColor}
+                        focused={focused}
+                        normalImage={require('../src/B_unselect.png')}
+                        selectedImage={require('../src/B_select.png')}
+                    />
+                )
+            }),
+        },
     },
 
-    {
+    {//Tab属性配置
         tabBarComponent:TabBarBottom,
         tabBarPosition:'bottom',
         swipeEnabled:false,
@@ -95,6 +110,7 @@ const Navigator = StackNavigator({
     ToScreen:{screen:ToScreen},
     AnimatedScreen:{screen:AnimatedScreen}
 },{
+    //页面属性配置
     navigationOptions:{
         headerTitle:"主页面",
         headerBackTitle:"返回",
